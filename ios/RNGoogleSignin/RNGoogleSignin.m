@@ -155,6 +155,7 @@ RCT_EXPORT_METHOD(getTokens:(RCTPromiseResolveBlock)resolve
       resolve(@{
                 @"idToken" : authentication.idToken,
                 @"accessToken" : authentication.accessToken,
+                @"refreshToken" : authentication.refreshToken
                 });
     }
   };
@@ -184,6 +185,7 @@ RCT_EXPORT_METHOD(getTokens:(RCTPromiseResolveBlock)resolve
   NSDictionary *params = @{
                            @"user": userInfo,
                            @"idToken": user.authentication.idToken,
+                           @"refreshToken": user.authentication.refreshToken,
                            @"serverAuthCode": RCTNullIfNil(user.serverAuthCode),
                            @"scopes": user.grantedScopes,
                            };
