@@ -97,6 +97,7 @@ export interface User {
   };
   scopes?: string[];
   idToken: string | null;
+  refreshToken: string | null;
   /**
    * Not null only if a valid webClientId and offlineAccess: true was
    * specified in configure().
@@ -147,7 +148,7 @@ export namespace GoogleSignin {
 
   function clearCachedAccessToken(token: string): Promise<null>;
 
-  function getTokens(): Promise<{ idToken: string; accessToken: string }>;
+  function getTokens(): Promise<{ idToken: string; accessToken: string; refreshToken: string; }>;
 }
 
 export const statusCodes: {
